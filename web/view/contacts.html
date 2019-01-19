@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>ООО «Императив Сибирь»</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../lib/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="../lib/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="lib/css/bootstrap.css" type="text/css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../service/NewsService.js"></script>
+        <script src="../controllers/NewsController.js"></script>
+        <script>
+                function newsClick(id)
+               {
+                    // document.location.href = "/Imperativ/view/news.html?id="+id;
+                     //document.location.href = "/Imperativ/view/newsById.html?id="+id;
+                    var newsController = new NewsController();
+                    newsController.getFullNewsByIdView2(id);
+               }
+               function contactsLoad()
+               {
+                   
+               }
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid p-0">
+            <div class="header" >
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container">
+                        <a class="navbar-brand" href="/Imperativ/index.html">
+                            <img src="images/logo.jpg" class="d-inline-block align-top" alt="">
+                        </a>
+                        <div>
+                            <div class="text-to-center" ><i class="fas fa-map-marked-alt fa-4x fa-pull-left"></i>
+                                <h3 >Наши контакты</h3></div>
+                            <div align="right"><a href="#">Свяжитесь с нами</a></div>
+                        </div>
+                        <canvas data-type="radial-gauge"
+                                data-width="200"
+                                data-height="200"
+                                data-value = "180"
+                                data-units="Kv/h"
+                                data-min-value="0"
+                                data-start-angle="90"
+                                data-ticks-angle="180"
+                                data-value-box="true"
+                                data-max-value="220"
+                                data-major-ticks="0,20,40,60,80,100,120,140,160,180,200,220"
+                                data-minor-ticks="3"
+                                data-stroke-ticks="true"
+                                data-highlights='[
+                                {"from": 160, "to": 220, "color": "rgba(200, 50, 50, .75)"}
+                                ]'
+                                data-color-plate="rgba(255, 255, 255, 0)"
+                                data-border-shadow-width="1"
+                                data-borders="false"
+                                data-needle-type="arrow"
+                                data-needle-width="10"
+                                data-needle-circle-size="7"
+                                data-needle-circle-outer="true"
+                                data-needle-circle-inner="false"
+                                data-animation-duration="1500"
+                                data-animation-rule="linear"
+                                ></canvas>
+                    </div>
+                </nav>
+            </div>
+            <div class="left-menu container-fluid">
+                <div class="row">
+                    <div class="col-3" style="margin-right: 100px;">
+                        <div class="col">
+                            <nav class="nav flex-column menu-style" >
+                                <a class="list-inline" href="/Imperativ/index.html" id="link">&#10148; Главная страница</a>
+                                <a class="list-inline" href="/Imperativ/view/news.html" id="link">&#10148; Новости</a>
+                                <a class="list-inline" href="#" id="link">&#10148; Наши услуги</a>
+                                <a class="list-inline" href="#" id="link">&#10148; Проекты</a>
+                                <a class="list-inline" href="#" id="link">&#10148; Вакансии</a>
+                                <a class="list-inline" href="#" id="link">&#10148; О компании</a>
+                                <a class="list-inline" href="#" id="link" onclick="contactsLoad()">&#10148; Контакты</a>
+                            </nav> 
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col"><br>
+                            <h3>Последние новости</h3>
+                            <div id="news"></div>
+                        </div>
+                    </div>
+                    <div class="col bg-light mr-4" id="main-content"><!--контент-->
+                                <h1 style="color:#6bb7e8">Контакты</h1><hr>
+                                <div class="row-fluid">
+                                        <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2289.4209430645515!2d73.30727221563781!3d54.983253280354496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43ab01a2450d1df7%3A0x9d5eb3de19d2179c!2z0L_RgC4g0JrQvtC80LDRgNC-0LLQsCwgMjEg0LouMSwg0J7QvNGB0LosINCe0LzRgdC60LDRjyDQvtCx0LsuLCA2NDQxMTI!5e0!3m2!1sru!2sru!4v1515656458810"></iframe>    	
+                                        <h3>Физический адрес</h3>
+                                        <address>
+                                            <strong>ООО «Императив Сибирь»</strong><br>
+                                            Проспект Комарова, 21 к.1<br>
+                                            Офис 117<br>
+                                            Омск<br>
+                                            644074
+                                        </address>
+                                    </div>
+                              
+                    </div><!--контент кончился-->
+                </div>
+            </div>
+            <!--Футер темный-->
+            <div class="up-footer" id="up-footer">
+                <div class="container" >
+                    <div class="row">
+                        <div class="col-6">
+                            <p style="font-size: 70px; font-weight: bold; text-align: justify; line-height:1;">Императив</p>
+                            <div align="right" style="font-size: 20px; font-weight: bold">Внедрение энергоэффективных технологий</div><hr color="white" noshade size="10">
+                            <a href="#">Императив-Сибирь</a> осуществляет деятельность
+                            в сфере внедрения энергосберегающих и энергоэффективных технологий
+                            и энергосервиса в учреждениях бюджетной сферы, ЖКХ, администрации и сельских поселений.
+                        </div>
+                        <div class="col">
+                            <h1>Контакты</h1><hr color="white" noshade size="10">
+                            <i class="fas fa-map-marker-alt fa-3x fa-pull-left" style="color: Dodgerblue;"></i>
+                            644074, Омск, Проспект Комарова,<br>
+                            21, к.1, Офис 117<hr color="white" noshade size="10">
+                            <i class="fas fa-phone-square fa-3x fa-pull-left" style="color: Dodgerblue;"></i>
+                            Телефон:<br>
+                            Факс:<br><hr color="white" noshade size="10">
+                            <div class="text-to-center"><i class="far fa-envelope fa-3x fa-pull-left" style="color: Dodgerblue; vertical-align:middle;"></i>
+                            prudfsfsdf@gmail.com
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            <!--Футер темный кончился-->
+            <!--Футер синий-->
+            <div class="footer" >
+                <nav class="navbar navbar-expand-lg navbar-light bg-light" id="footer">
+                    <div class="container">
+                        <a class="navbar-brand" href="#">Copyright &copy; "ООО" Императив-Сибирь</a>
+                        <div>Design by FDFS</div>
+                    </div>
+                </nav>
+            </div>
+            <!--Футер синий кончился-->
+            <script>
+                window.onload = function ()
+                {
+                    var newsController = new NewsController();
+                    newsController.getLastNews();
+                };
+            </script>
+        </div>
+        <script src="//cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.5/radial/gauge.min.js"></script>
+        <script src="../lib/js/jquery.min.js"></script>
+        <script src="../lib/js/bootstrap.min.js"></script>
+        <script src="../lib/js/script.js"></script>
+    </body>
+</html>

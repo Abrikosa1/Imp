@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>ООО "Императив-Сибирь"</title>
+        <meta charset="UTF-8">
+        <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../lib/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="../lib/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="../lib/css/bootstrap.css" type="text/css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../service/NewsService.js"></script>
+        <script src="../controllers/NewsController.js"></script>
+        <script>
+         function newsClick(id)
+        {
+            alert(id);
+              document.location.href = "/Imperativ/view/newsById.html?id="+id;
+        }
+    </script>
+    </head>
+    <body>
+        <div class="containerrr">
+            <div class="header">
+                <div class="menuWrapper">
+                    <div class="menuFloat">
+                        <div class="menuLeft">
+                            <div class="menuLeftLogo">Logo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="leftmenu">
+                <div class="row">        
+
+                    <div class="list-group">
+                        <a class="list-group-item" href="/Imperativ/index.html"><i class="glyphicon glyphicon-home btn-lg"></i>Главная</a>
+                        <a class="list-group-item" href="/Imperativ/view/news.html"><i class="glyphicon glyphicon-list-alt btn-lg"></i>Новости</a>
+                        <a class="list-group-item" href="/Imperativ/view/projects.html"><i class="glyphicon glyphicon-briefcase btn-lg"></i>Наши услуги</a>
+                        <a class="list-group-item" href="/Imperativ/view/service.html"><i class="glyphicon glyphicon-certificate btn-lg"></i>Проекты</a>
+                        <a class="list-group-item" href="/Imperativ/view/vacancies.html"><i class="glyphicon glyphicon-user btn-lg"></i>Вакансии</a>
+                        <a class="list-group-item" href="/Imperativ/view/about.html"><i class="glyphicon glyphicon-info-sign btn-lg"></i>О компании</a>
+                        <a class="list-group-item" href="/Imperativ/view/contacts.html"><i class="glyphicon glyphicon-phone-alt btn-lg"></i>Контакты</a>
+                    </div>
+                </div>
+            </div>
+            <div class="maincontent">
+                
+                <div id="news"></div> 
+            </div>
+            <div class="clear"></div>
+            <div class="footer">
+                <footer>
+                    <p>© 2018 All rights reserved 2017-2018.</p>
+                </footer>
+            </div>
+            </div>
+         <script>
+window.onload = function()
+         { 
+        var url = new URL(document.location.href);
+        var id= url.searchParams.get("id");
+        var newsController = new NewsController();
+        newsController.getFullNewsByIdView(id);
+              
+         }
+             </script>
+        <script src="../lib/js/jquery.min.js"></script>
+        <script src="../lib/js/bootstrap.min.js"></script>
+    </body>
+</html>

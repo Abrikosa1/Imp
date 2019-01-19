@@ -1,0 +1,75 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Bree+Serif);
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+       /* background-image: url(/Imperativ/images/gray.jpg);*/
+       background-color: #f0f0f0;
+       
+}
+/*Для меню*/
+.menu-style{
+    text-decoration: none !important;
+}
+
+/*Заголовок*/
+#header{
+     background-color: #f0f0f0 !important;
+}
+
+/*Нижний футер*/
+#footer{
+    background-color: #2c90e6 !important;
+    border-top: 4px solid #f0f0f0 !important;;
+}
+
+/*Контент*/
+#main-content{
+    background-color: #e8e8e8 !important;
+}
+
+/*Верхний футер*/
+#up-footer{
+    background-color: #454545 !important;
+    color: white;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-top: 20px;
+    line-height: 1;
+}
+
+/*Граница слайдера*/
+#slider-border{
+    border: 6px solid #000 !important;
+}
+
+#111{   
+       line-height: 1.5 !important;
+}
+
+/*для меню*/
+#link{
+     text-decoration: none !important;
+     color: #808080;
+     font-size: 22px;
+}
+#link:hover{
+     color: #6bb7e8;
+}
+
+#link:active{
+     color: #6bb7e8;
+}
+
+/*Для размещения текста перед или после картинки вертикально по середине,
+  необходимо заключить картинку и текст в div и задать картинке данный класс*/
+.text-to-center{
+   display: flex;
+   align-items:center;
+}
+
+/*Для размещения ссылок на соцсети внизу данной области*/
+#social{
+    position: absolute;
+    bottom: 20px;
+}

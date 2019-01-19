@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+  
+<mapper namespace="news"> 
+ 
+    <resultMap id = "result" type = "Imperativ.model.News"> 
+       <result property = "id" column = "id"/> 
+       <result property = "title" column = "title"/> 
+       <result property = "shortDescription" column = "shortDescription"/> 
+       <result property = "fullDescription" column = "fullDescription"/> 
+       <result property = "date" column = "date"/> 
+       <result property = "image" column = "image"/> 
+    </resultMap> 
+ 
+    <select id = "selectAll" resultMap = "result"> 
+       SELECT * FROM news;  
+    </select> 
+
+    <select id = "selectById" parameterType = "int" resultMap = "result"> 
+       SELECT * FROM news WHERE id = #{id}; 
+    </select> 
+
+    <update id = "update" parameterType = "Imperativ.model.News"> 
+       UPDATE news SET 
+        title = #{title}, 
+        shortDescription = #{shortDescription} ,
+        fullDescription= #{fullDescription} ,
+        date = #{date} ,
+        image= #{image} 
+        WHERE id = #{id}; 
+    </update> 
+  
+    <delete id = "deleteById" parameterType = "int"> 
+       DELETE from news WHERE id = #{id}; 
+    </delete> 
+
+    <insert id = "insert" parameterType = "Imperativ.model.News"> 
+       INSERT INTO news (title, shortDescription,fullDescription,date,image)  
+       VALUES (#{title}, #{shortDescription},#{fullDescription},#{date},#{image});     
+    </insert>
+</mapper> 
